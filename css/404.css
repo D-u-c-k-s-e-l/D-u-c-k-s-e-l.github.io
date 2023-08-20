@@ -1,0 +1,47 @@
+@keyframes spin {
+	0% {
+		transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	}
+	
+	100% {
+		transform: rotateX(360deg) rotateY(-360deg) rotateZ(360deg);
+	}
+}
+
+#main-content {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: right;
+}
+
+#column404 {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+	width: min-content;
+}
+
+#e404 {
+	font-size: 120pt;
+	height: 0;
+	margin-top: 0;
+	font-family: var(--theme-code-font);
+}
+
+#n404 {
+	font-size: 200pt;
+	margin-top: 0ch;
+	height: 1ch;
+	font-family: var(--theme-code-font);
+	animation: spin 8s linear infinite;
+	z-index: -1;
+}
+
+#t404 {
+	margin-top: 0ch;
+	text-align: center;
+	font-size: 16pt;
+}

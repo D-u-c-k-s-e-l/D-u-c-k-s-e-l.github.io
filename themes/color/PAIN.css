@@ -1,0 +1,27 @@
+/*
+This css file applies a theme made to pain your eyes.
+*/
+
+html {
+	--PAIN-bg:	white;
+	--PAIN-bg-alt: lightblue;
+	--PAIN-fg:	black;
+	--PAIN-blue: blue;
+	--PAIN-pink: red;
+
+	/*Systematic colors*/
+	--theme-link:		var(--PAIN-blue);
+	--theme-background:	var(--PAIN-bg);
+	--theme-background-alt:	var(--PAIN-bg-alt);
+	--theme-foreground:	var(--PAIN-fg);
+	--theme-social-icons:	var(--PAIN-pink);
+	--theme-borders:	var(--PAIN-pink);
+	--theme-dropdown:	var(--PAIN-pink);
+}
+
+
+.color0 {color: var(--PAIN-bg);}
+.color1 {color: var(--PAIN-fg);}
+.color2 {color: var(--PAIN-blue);}
+.color3 {color: var(--PAIN-pink);}
+.color5 {color: var(--PAIN-bg-alt);}

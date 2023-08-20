@@ -1,0 +1,14 @@
+@font-face {
+	font-family: 'E1234';
+	src: url(./E1234/E1234.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'E1234';
+	src: url(./E1234/E1234-Italic.ttf) format('truetype');
+	font-style: italic;
+}
+
+body {
+	--theme-font: 'E1234';
+	--theme-code-font: 'E1234';
+}

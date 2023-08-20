@@ -1,0 +1,12 @@
+@font-face {
+	font-family: 'Eirian';
+	src:	url(./Eirian/Eirian.ttf) format('truetype'),
+		url(./Eirian/Eirian.otf) format('opentype'),
+		url(./Eirian/Eirian.woff) format('woff'),
+		url(./Eirian/Eirian.woff2) format('woff2');
+}
+
+body {
+	--theme-font: 'Eirian';
+	--theme-code-font: 'Eirian';
+}

@@ -1,0 +1,47 @@
+/*
+This css file applies the monokai theme (taken from https://github.com/oneKelvinSmith/monokai-emacs)
+*/
+
+html {
+	--monokai-fg:			#ABB2BF;
+	--monokai-bg:			#282C34;
+	--monokai-comments:		#F8F8F0;
+
+	--monokai-highlight:		#FFB269;
+	--monokai-emphasis:		#282C34;
+	--monokai-highlight-line:	#1B1D1E;
+	--monokai-highlight-alt:	#66D9EF;
+
+	--monokai-red:		#E06C75;
+	--monokai-orange:	#D19A66;
+	--monokai-yellow:	#E5C07B;
+	--monokai-green:	#98C379;
+	--monokai-cyan:		#56B6C2;
+	--monokai-blue:		#61AFEF;
+	--monokai-violet:	#C678DD;
+	--monokai-gray:		#3E4451;
+
+	/*Systematic colors*/
+	--theme-link:		var(--monokai-highlight);
+	--theme-background:	var(--monokai-bg);
+	--theme-background-alt:	var(--monokai-gray);
+	--theme-foreground:	var(--monokai-fg);
+	--theme-social-icons:	var(--monokai-violet);
+	--theme-borders:	var(--monokai-comments);
+	--theme-dropdown:	var(--monokai-highlight-alt);
+}
+
+.color-3 {color: var(--monokai-highlight-alt);}
+.color-2 {color: var(--monokai-highlight-line);}
+.color-1 {color: var(--monokai-highlight);}
+.color0  {color: var(--monokai-bg);}
+.color1  {color: var(--monokai-fg);}
+.color2  {color: var(--monokai-comments);}
+.color3  {color: var(--monokai-red);}
+.color4  {color: var(--monokai-orange);}
+.color5  {color: var(--monokai-yellow);}
+.color6  {color: var(--monokai-green);}
+.color7  {color: var(--monokai-cyan);}
+.color8  {color: var(--monokai-blue);}
+.color9  {color: var(--monokai-violet);}
+.colorA  {color: var(--monokai-gray);}

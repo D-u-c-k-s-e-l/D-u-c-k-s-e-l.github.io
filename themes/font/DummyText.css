@@ -1,0 +1,12 @@
+@font-face {
+	font-family: 'DummyText';
+	src:	url(./DummyText/DummyText.ttf) format('truetype'),
+		url(./DummyText/DummyText.otf) format('opentype'),
+		url(./DummyText/DummyText.woff) format('woff'),
+		url(./DummyText/DummyText.woff2) format('woff2');
+}
+
+body {
+	--theme-font: 'DummyText';
+	--theme-code-font: 'E1234', monospace;
+}

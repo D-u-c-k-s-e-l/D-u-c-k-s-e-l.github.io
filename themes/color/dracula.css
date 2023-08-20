@@ -1,0 +1,38 @@
+/*
+This css file applies the dracula theme (taken from https://github.com/dracula/dracula-theme)
+*/
+
+html {
+	--dracula-bg:		#282a36;
+	--dracula-bg-alt:	#44475a;
+	--dracula-fg:		#f8f8f2;
+	--dracula-pink:		#ff79c6;
+	--dracula-red:		#ff5555;
+	--dracula-orange:	#ffb86c;
+	--dracula-yellow:	#f1fa8c;
+	--dracula-green:	#50fa7b;
+	--dracula-cyan:		#8be9fd;
+	--dracula-purple:	#bd93f9;
+	--dracula-comment:	#6272a4;
+
+	/*Systematic colors*/
+	--theme-link:		var(--dracula-cyan);
+	--theme-background:	var(--dracula-bg);
+	--theme-background-alt:	var(--dracula-bg-alt);
+	--theme-foreground:	var(--dracula-fg);
+	--theme-social-icons:	var(--dracula-purple);
+	--theme-borders:	var(--dracula-comment);
+	--theme-dropdown:	var(--dracula-green)
+}
+
+.color0  {color: var(--dracula-bg);}
+.color1  {color: var(--dracula-fg);}
+.color2  {color: var(--dracula-comment);}
+.color3  {color: var(--dracula-pink);}
+.color4  {color: var(--dracula-red);}
+.color5  {color: var(--dracula-orange);}
+.color6  {color: var(--dracula-yellow);}
+.color7  {color: var(--dracula-green);}
+.color8  {color: var(--dracula-cyan);}
+.color9  {color: var(--dracula-purple);}
+.colorA  {color: var(--dracula-bg-alt);}

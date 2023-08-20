@@ -1,0 +1,22 @@
+#ducksel::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#ducksel h1 {
+	float: left;
+	padding-top: calc(7.5rem - 1ch);
+}
+
+#ducksel img {
+	display: block;
+	margin-right: 3rem;
+	width: 15rem;
+	height: 15rem;
+	float: right;
+}
+
+#main-content li{
+	list-style-type: '- ';
+}
