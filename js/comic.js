@@ -88,22 +88,22 @@ const COUNT_FROM = 0;
 	})
 
 	$(".comicButtonFirst").on("click", function () {
-		window.location.href = "/comics/?comic=first";
+		window.location.href = "/comics?comic=first";
 	})
 
 	$(".comicButtonPrevious").on("click", function () {
 		console.log("previous: ", findComicID())
-		window.location.href = "/comics/?comic=" + (findComicID() - 1)
+		window.location.href = "/comics?comic=" + (findComicID() - 1)
 	})
 
 	$(".comicButtonNext").on("click", function () {
 		console.log("next")
-		window.location.href = "/comics/?comic=" + (findComicID() + 1)
+		window.location.href = "/comics?comic=" + (findComicID() + 1)
 	})
 
 	$(".comicButtonLast").on("click", function () {
 		console.log("last")
-		window.location.href = "/comics/"
+		window.location.href = "/comics"
 	})
 }
 
