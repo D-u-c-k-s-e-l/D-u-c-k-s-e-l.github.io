@@ -29,6 +29,11 @@ html {
 	--theme-social-icons:	var(--monokai-violet);
 	--theme-borders:	var(--monokai-comments);
 	--theme-dropdown:	var(--monokai-highlight-alt);
+
+	--theme-r: var(--monokai-red);
+	--theme-g: var(--monokai-green);
+	--theme-b: var(--monokai-blue);
+	--theme-y: var(--monokai-yellow);
 }
 
 .color-3 {color: var(--monokai-highlight-alt);}

@@ -22,7 +22,12 @@ html {
 	--theme-foreground:	var(--dracula-fg);
 	--theme-social-icons:	var(--dracula-purple);
 	--theme-borders:	var(--dracula-comment);
-	--theme-dropdown:	var(--dracula-green)
+	--theme-dropdown:	var(--dracula-green);
+
+	--theme-r: var(--dracula-red);
+	--theme-g: var(--dracula-green);
+	--theme-b: var(--dracula-cyan);
+	--theme-y: var(--dracula-yellow);
 }
 
 .color0  {color: var(--dracula-bg);}

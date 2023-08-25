@@ -28,6 +28,7 @@ async function trySetComicID(comicId) {
 			$(".comic").prop("src", filename)
 		} else { failures++ }
 	}
+	$(".comicContainer").hide().show(0);
 	if (failures < MAX_PRECEDING_ZEROS_IN_FILENAME) {
 		return "success!";
 	} else {
@@ -53,38 +54,36 @@ function findComicID() {
 const COUNT_FROM = 0;
 
 { //buttons clicked
-	$(".comicButtonPlus").on("click", function () {
-		let old_zoom = parseFloat($(".comicContainer").css("--z"));
-		if (old_zoom >= 1) {
-			$(".comicContainer").css("--z",
-				old_zoom + 1// same as += 1
-			)
-		} else {
-			$(".comicContainer").css("--z",
-				1 / ((1 / old_zoom) - 1)
-			)
-		}
+
+	function getZoom() {
+		return parseFloat($(".comicContainer").css("--z"));
+	}
+	function setZoom(zoom) {
+		$(".comicContainer").css("--z",zoom )
 		const comicElement = document.querySelector('.comic');
 		const comicWrapper = document.querySelector('.comicHolder');
 		comicWrapper.style.width = `${comicElement.getBoundingClientRect().width}px`;
 		comicWrapper.style.height = `${comicElement.getBoundingClientRect().height}px`;
+		localStorage.setItem("comicZoomLevel", getZoom())
+		$(".comicContainer").hide().show(0);
+	}
+
+	$(".comicButtonPlus").on("click", function () {
+		let z = getZoom()
+		if (z >= 1) {
+			setZoom(z+1)
+		} else {
+			setZoom(1/((1/z)-1))
+		}
 	})
 
 	$(".comicButtonMinus").on("click", function () {
-		let old_zoom = parseFloat($(".comicContainer").css("--z"));
-		if (old_zoom > 1) {
-			$(".comicContainer").css("--z",
-				old_zoom - 1// same as -= 1
-			)
+		let z = getZoom()
+		if (z >= 1) {
+			setZoom(z - 1)
 		} else {
-			$(".comicContainer").css("--z",
-				1 / ((1 / old_zoom) + 1)
-			)
+			setZoom(1 / ((1 / z) + 1))
 		}
-		const comicElement = document.querySelector('.comic');
-		const comicWrapper = document.querySelector('.comicHolder');
-		comicWrapper.style.width = `${comicElement.getBoundingClientRect().width}px`;
-		comicWrapper.style.height = `${comicElement.getBoundingClientRect().height}px`;
 	})
 
 	$(".comicButtonFirst").on("click", function () {
@@ -154,4 +153,16 @@ const urlParams = new URLSearchParams(queryString);
 			});
 		})
 	}
+}
+
+{ // auto zoom
+	var comicZoomLevel = getZoom();
+	if (parseFloat(localStorage.getItem("comicZoomLevel"))) {
+		comicZoomLevel = parseFloat(localStorage.getItem("comicZoomLevel"))
+	}
+	window.addEventListener("DOMContentLoaded", function () {
+		setTimeout(function () {
+			setZoom(comicZoomLevel)
+		}, 100)
+	})
 }

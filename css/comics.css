@@ -8,6 +8,7 @@
 	-ms-interpolation-mode: nearest-neighbor;
 	position: relative;
 	left: 3rem;
+	top: 3rem;
 	display: flex;
 	flex-direction: column;
 	align-items: top;
@@ -37,13 +38,13 @@
 }
 
 .comicButton {
-	color: #fff;
+	color: var(--theme-b);
 	background-color: inherit;
 	border-width: .25rem;
 	font-family: inherit;
 	font-size: inherit;
-	color: #ff0;
-	border-color: #ff0;
+	color: var(--theme-y);
+	border-color: var(--theme-y);
 }
 
 .comicButtonZoom {
@@ -52,13 +53,13 @@
 }
 
 .comicButtonPlus:hover {
-	color: #0f0;
-	border-color: #0f0;
+	color: var(--theme-g);
+	border-color: var(--theme-g);
 }
 
 .comicButtonMinus:hover {
-	color: #f00;
-	border-color: #f00;
+	color: var(--theme-r);
+	border-color: var(--theme-r);
 }
 
 .comicButtonNav {
@@ -67,7 +68,7 @@
 }
 
 .comicButtonNav:hover {
-	border-color: #0ff;
-	color: #0ff;
+	border-color: var(--theme-b);
+	color: var(--theme-b);
 	border-style: none none solid none;
 }

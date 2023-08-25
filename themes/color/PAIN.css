@@ -8,6 +8,8 @@ html {
 	--PAIN-fg:	black;
 	--PAIN-blue: blue;
 	--PAIN-pink: red;
+	--PAIN-green: cyan;
+	--PAIN-yell: orange;
 
 	/*Systematic colors*/
 	--theme-link:		var(--PAIN-blue);
@@ -17,6 +19,11 @@ html {
 	--theme-social-icons:	var(--PAIN-pink);
 	--theme-borders:	var(--PAIN-pink);
 	--theme-dropdown:	var(--PAIN-pink);
+
+	--theme-r: var(--PAIN-pink);
+	--theme-g: var(--PAIN-green);
+	--theme-b: var(--PAIN-blue);
+	--theme-y: var(--PAIN-yell);
 }
 
 
