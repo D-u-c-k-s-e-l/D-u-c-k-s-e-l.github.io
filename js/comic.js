@@ -35,13 +35,13 @@ async function trySetComicID(comicId) {
 	}
 }
 async function getLatestComicID() {
-	const url = "./comics/latest";
+	const url = "/comics/latest";
 	const response = await fetch(url);
 	const text = await response.text();
 	return parseInt(text)
 }
 async function getFirstComicID() {
-	const url = "./comics/first";
+	const url = "/comics/first";
 	const response = await fetch(url);
 	const text = await response.text();
 	return parseInt(text)
@@ -88,22 +88,22 @@ const COUNT_FROM = 0;
 	})
 
 	$(".comicButtonFirst").on("click", function () {
-		window.location.href = "./?comic=first";
+		window.location.href = "/comics/?comic=first";
 	})
 
 	$(".comicButtonPrevious").on("click", function () {
 		console.log("previous: ", findComicID())
-		window.location.href = "./?comic=" + (findComicID() - 1)
+		window.location.href = "/comics/?comic=" + (findComicID() - 1)
 	})
 
 	$(".comicButtonNext").on("click", function () {
 		console.log("next")
-		window.location.href = "./?comic=" + (findComicID() + 1)
+		window.location.href = "/comics/?comic=" + (findComicID() + 1)
 	})
 
 	$(".comicButtonLast").on("click", function () {
 		console.log("last")
-		window.location.href = "./"
+		window.location.href = "/comics/"
 	})
 }
 
