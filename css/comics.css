@@ -1,0 +1,73 @@
+.comicContainer {
+	image-rendering: optimizeSpeed;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -o-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: pixelated;
+	image-rendering: optimize-contrast;
+	-ms-interpolation-mode: nearest-neighbor;
+	position: relative;
+	left: 3rem;
+	display: flex;
+	flex-direction: column;
+	align-items: top;
+	width: max-content;
+	--z: 1;
+	background-color: var(--theme-background-alt);
+	padding: 2rem;
+	border-radius: 2rem;
+}
+
+.comicHolder {
+	position: relative;
+}
+
+.comicHolder .comic {
+	transform: scale(var(--z));
+	transform-origin: left top;
+}
+
+.comicButtons {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	size: relative;
+	align-items: baseline;
+}
+
+.comicButton {
+	color: #fff;
+	background-color: inherit;
+	border-width: .25rem;
+	font-family: inherit;
+	font-size: inherit;
+	color: #ff0;
+	border-color: #ff0;
+}
+
+.comicButtonZoom {
+	border-radius: .5rem;
+	border-style: none solid none solid;
+}
+
+.comicButtonPlus:hover {
+	color: #0f0;
+	border-color: #0f0;
+}
+
+.comicButtonMinus:hover {
+	color: #f00;
+	border-color: #f00;
+}
+
+.comicButtonNav {
+	border-radius: 0;
+	border-style: none;
+}
+
+.comicButtonNav:hover {
+	border-color: #0ff;
+	color: #0ff;
+	border-style: none none solid none;
+}

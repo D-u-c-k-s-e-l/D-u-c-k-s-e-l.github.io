@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+body {
+	overflow-y: hidden;
+	overflow-x: hidden;
+	margin: 0;
+}
+
+.navbar {
+	font-family: 'Fira Code';
+	position: 0, 0;
+	width: 100%;
+	height: 50px;
+	background-color: #0f0;
+	color: #fff;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	gap: 2ch;
+}
+
+.navbar a {
+	color: #000;
+	font-weight: bolder;
+	text-decoration: none;
+	-webkit-text-decoration: none;
+	position: relative;
+	left: auto;
+	top: calc(50%-0.5ch);
+}
+
+.navbar a:hover {
+	color: #f0f;
+	text-decoration: underline #000 .25ch;
+	-webkit-text-decoration: underline #000 .25ch;
+}
+
+.content {
+	background-color: #000;
+	color: #fff;
+	width: 100%;
+	height: calc(100vh - 50px);
+	overflow: auto;
+	font-family: 'Fira Code';
+	scrollbar-width: 5;
+}
+
+.comicContainer {
+	image-rendering: optimizeSpeed;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -o-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: pixelated;
+	image-rendering: optimize-contrast;
+	-ms-interpolation-mode: nearest-neighbor;
+	position: relative;
+	left: 3rem;
+	display: flex;
+	flex-direction: column;
+	align-items: top;
+	width: max-content;
+	--z: 1;
+	background-color: gray;
+	padding:2rem;
+	border-radius: 2rem;
+}
+
+.comicHolder {
+	position: relative;
+}
+
+.comicHolder .comic {
+	transform: scale(var(--z));
+	transform-origin: left top;
+}
+
+.comicButtons {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	size: relative;
+	align-items: baseline;
+}
+
+.comicButton {
+	color: #fff;
+	background-color: inherit;
+	border-width: .25rem;
+	font-family: inherit;
+	font-size: inherit;
+	color: #ff0;
+	border-color: #ff0;
+}
+
+.comicButtonZoom {
+	border-radius: .5rem;
+	border-style: none solid none solid;
+}
+
+.comicButtonPlus:hover {
+	color: #0f0;
+	border-color: #0f0;
+}
+
+.comicButtonMinus:hover {
+	color: #f00;
+	border-color: #f00;
+}
+
+.comicButtonNav {
+	border-radius: 0;
+	border-style: none;
+}
+
+.comicButtonNav:hover {
+    border-color: #0ff;
+	color: #0ff;
+    border-style: none none solid none;
+}
+
+
+.r {color: #f00;}
+.g {color: #0f0;}
+.b {color: #00f;}
+.w {color: #fff;}
+.c {color: #0ff;}
+.m {color: #f0f;}
+.y {color: #ff0;}
+.k {color: #000;}
+.r_bg {background-color: #f00;}
+.g_bg {background-color: #0f0;}
+.b_bg {background-color: #00f;}
+.w_bg {background-color: #fff;}
+.c_bg {background-color: #0ff;}
+.m_bg {background-color: #f0f;}
+.y_bg {background-color: #ff0;}
+.k_bg {background-color: #000;}

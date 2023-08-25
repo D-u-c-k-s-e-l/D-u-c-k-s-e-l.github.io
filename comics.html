@@ -17,6 +17,7 @@
 	</div>
 	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" href="css/comics.css">
+	<script src="js/jquery-3.6.4.js"></script>
 	<script src="js/theme_controller.js"></script>
 </head>
 
@@ -80,7 +81,20 @@
 	</div>
 	<div id="page-wrapper">
 		<div id="main-content">
-			<h1>Under Construction...</h1>
+			<div class="comicContainer">
+				<div class="comicButtons">
+					<button class="comicButton comicButtonZoom comicButtonMinus" type="button"> - </button>
+					<button class="comicButton comicButtonNav comicButtonFirst" type="button"> &lt;==First </button>
+					<button class="comicButton comicButtonNav comicButtonPrevious" type="button"> &lt;-Previous </button>
+					<button class="comicButton comicButtonNav comicButtonRandom" type="button"> ?Random? </button>
+					<button class="comicButton comicButtonNav comicButtonNext" type="button"> Next-&gt; </button>
+					<button class="comicButton comicButtonNav comicButtonLast" type="button"> Current==&gt; </button>
+					<button class="comicButton comicButtonZoom comicButtonPlus" type="button"> + </button>
+				</div>
+				<div class="comicHolder">
+					<img class="comic" src="./comics/0001.bmp" />
+				</div>
+			</div>
 		</div>
 		<div id="footer">
 			<div class="footer-column" id="footer-left">
@@ -92,11 +106,13 @@
 			<div class="footer-column" id="footer-center">
 			
 			</div>
-			<div class="footer-column" id="footer-right">
+			<script src="js/comic.js"></script>
+	<div class="footer-column" id="footer-right">
 			
 			</div>
 		</div>
 	</div>
+	<script src="js/comic.js"></script>
 </body>
 
 </html>
