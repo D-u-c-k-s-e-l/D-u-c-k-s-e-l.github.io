@@ -131,7 +131,7 @@ const urlParams = new URLSearchParams(queryString);
 		} else {
 			let comicId = parseInt(urlParams.get("comic")).toString()
 
-			if (!((COUNT_FROM <= comicId) && (comicId <= getLatestComicID()))) {
+			if (!((getFirstComicID() <= comicId) && (comicId <= getLatestComicID()))) {
 				console.log("INVALID COMIC ID: " + comicId)
 				$(".comicButtonLast").click()
 			} else {
