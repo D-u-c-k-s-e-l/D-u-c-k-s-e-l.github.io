@@ -20,7 +20,7 @@ async function doesFileExist(urlToFile) {
 
 async function trySetComicID(comicId) {
 	let failures = 0;
-	for (let i = 0; i < MAX_PRECEDING_ZEROS_IN_FILENAME; i++) {
+	for (let i = 0; i <= MAX_PRECEDING_ZEROS_IN_FILENAME; i++) {
 		let filename = "comics/" + '0'.repeat(i) + comicId + ".bmp"
 		// console.log(filename)
 		let fileExists = await doesFileExist(filename)
