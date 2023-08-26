@@ -20,7 +20,7 @@ async function doesFileExist(urlToFile) {
 
 async function trySetComicID(comicId) {
 	let failures = 0;
-	for (let i = 0; i <= MAX_PRECEDING_ZEROS_IN_FILENAME; i++) {
+	for (let i = 0; i <= MAX_PRECEDING_ZEROS_IN_FILENAME+1; i++) {
 		let filename = "comics/" + '0'.repeat(i) + comicId + ".bmp"
 		// console.log(filename)
 		let fileExists = await doesFileExist(filename)
@@ -29,7 +29,7 @@ async function trySetComicID(comicId) {
 		} else { failures++ }
 	}
 	$(".comicContainer").hide().show(0);
-	if (failures < MAX_PRECEDING_ZEROS_IN_FILENAME) {
+	if (failures <= MAX_PRECEDING_ZEROS_IN_FILENAME) {
 		return "success!";
 	} else {
 		return "failure!";
