@@ -130,18 +130,13 @@ const urlParams = new URLSearchParams(queryString);
 			})
 		} else {
 			let comicId = parseInt(urlParams.get("comic")).toString()
-
-			if ((getFirstComicID() > comicId) || (comicId <= getLatestComicID())) {
-				console.log("INVALID COMIC ID: " + comicId)
-				$(".comicButtonLast").click()
-			} else {
-				trySetComicID(comicId).then((attempt) => {
-					if (attempt == "failure!") {
-						console.log("failure loading", comicId, ", loading most recent")
-						$(".comicButtonLast").click()
-					}
-				})
-			}
+			
+			trySetComicID(comicId).then((attempt) => {
+				if (attempt == "failure!") {
+					console.log("failure loading", comicId, ", loading most recent")
+					$(".comicButtonLast").click()
+				}
+			})
 		}
 	} else {
 		getLatestComicID().then((latestComicId) => {
