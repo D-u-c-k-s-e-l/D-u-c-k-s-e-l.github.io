@@ -20,8 +20,7 @@
 			style="color:var(--dracula-pink);background-color:var(--dracula-bg);">
 	</div>
 	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="css/{{ page.css_name }}.css">
-	<script src="js/theme_controller.js"></script>
+	<link rel="stylesheet" href="css/{{ page.cssName }}.css">
 </head>
 
 <body>
@@ -104,6 +103,10 @@
 			</div>
 		</div>
 	</div>
+	<script src="js/theme_controller.js"></script>
+	{% for jsInclude in page.jsIncludes %}
+		<script src="js/{{ jsInclude }}"></script>
+	{% endfor %}
 </body>
 
 </html>
