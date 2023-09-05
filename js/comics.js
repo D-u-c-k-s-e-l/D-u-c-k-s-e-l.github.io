@@ -31,7 +31,7 @@ function SetComicID(comicId) {
 	let filename
 	if (comicId === comicId.toString()) {
 		filename = NumStringToFilename(comicId)
-	} else if (isInteger(comicId)) {
+	} else if (comicId === parseInt(comicId)) {
 		filename = NumIntToFilename(comicId)
 	} else {
 		console.error("SetComicID only accepts strings and integers.")
@@ -158,7 +158,7 @@ $(".comicButtonRandom").on("click", async () => {
 
 // ================================ ON LOAD  ================================ //
 
-document.onload(() => {
+$( document ).ready(() => {
 	// Random --> RanDOm
 	for (let i = 0; i < $(".comicButtonRandom").text().length; i++) {
 		if (Math.random() < 0.5) {
