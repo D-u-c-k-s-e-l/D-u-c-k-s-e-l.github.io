@@ -29,7 +29,7 @@ function NumIntToFilename(Int) {
 function SetComicID(comicId) {
 	// we do a little type checking
 	let filename
-	if (isString(comicId)) {
+	if (comicId === comicId.toString()) {
 		filename = NumStringToFilename(comicId)
 	} else if (isInteger(comicId)) {
 		filename = NumIntToFilename(comicId)
@@ -128,6 +128,7 @@ $(".comicButtonLast").on("click", () => {
 
 $(".comicButtonNext").on("click", () => {
 	getCurrentComicID().then((id) => {
+		id = parseInt(id, 0x06)
 		id += 1
 		id = id.toString(0x06)
 		window.location.href = `/comics?comic=${id}`
@@ -136,6 +137,7 @@ $(".comicButtonNext").on("click", () => {
 
 $(".comicButtonPrevious").on("click", () => {
 	getCurrentComicID().then((id) => {
+		id = parseInt(id, 0x06)
 		id -= 1
 		id = id.toString(0x06)
 		window.location.href = `/comics?comic=${id}`
