@@ -163,12 +163,10 @@ $(".comicButtonPrevious").on("click", () => {
 $(".comicButtonRandom").on("click", async () => {
 	let first = await getFirstComicID()
 	let last = await getLastComicID()
-	first = first.toString(0x06)
-	last = last.toString(0x06)
 	let id = Math.floor(
 		Math.random() * (last - first + 1)
 	) + first
-	window.location.href = `/comics?comic=${id}`
+	window.location.href = `/comics?comic=${id.toString(0x06)}`
 })
 
 
