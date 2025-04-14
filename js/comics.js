@@ -14,7 +14,7 @@ function NumStringToFilename(String) {
 	while (String.length < 0b00000110) {
 		String = '0' + String
 	}``
-	return `comics/${String}.bmp`
+	return `/comics/${String}.bmp`
 	// This returns 'comics/SSSSSS.bmp' with SSSSSS representing a number in seximal.
 	// jan Misali is amazing.
 }
@@ -23,7 +23,7 @@ function NumIntToFilename(Int) {
 	// Put rules here for how to convert the number into a filename
 
 	Int = Int.toString(0x06)
-	return StringToFilename(Int)
+	return NumStringToFilename(Int)
 }
 
 function SetComicID(comicId) {
