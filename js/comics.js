@@ -143,7 +143,10 @@ $(".comicButtonNext").on("click", () => {
 		id = parseInt(id, 0x06)
 		id += 1
 		id = id.toString(0x06)
-		window.location.href = `/comics?comic=${id}`
+		getLastComicID().then((last) => {
+			if (id > last) {return}
+			window.location.href = `/comics?comic=${id}`
+		})
 	})
 })
 
@@ -151,6 +154,7 @@ $(".comicButtonPrevious").on("click", () => {
 	getCurrentComicID().then((id) => {
 		id = parseInt(id, 0x06)
 		id -= 1
+		if (id < 1) {return}
 		id = id.toString(0x06)
 		window.location.href = `/comics?comic=${id}`
 	})
