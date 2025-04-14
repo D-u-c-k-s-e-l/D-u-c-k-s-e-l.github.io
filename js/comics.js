@@ -2,6 +2,18 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const currentID = urlParams.get('comic');
 
+// Stupidity
+
+if (!String.prototype.replaceAt) {
+  String.prototype.replaceAt = function(index, replacement) {
+    if (index < 0 || index >= this.length) {
+      return this.toString(); // Return original string if index is out of bounds
+    }
+    return this.substring(0, index) + replacement + this.substring(index + 1);
+  };
+}
+
+
 // ============================== FILE HANDLING ============================= //
 
 function NumStringToFilename(String) {
