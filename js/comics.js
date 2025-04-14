@@ -181,9 +181,9 @@ $( document ).ready(() => {
 	}
 
 	if (currentID) {
-		getLastComicID().then((id) => {SetComicID(id)})
-	} else {
 		let comicId = parseInt(currentID, 0x06).toString(0x06)
 		SetComicID(comicId)
+	} else {
+		getLastComicID().then((id) => {SetComicID(id)})
 	}
 })
