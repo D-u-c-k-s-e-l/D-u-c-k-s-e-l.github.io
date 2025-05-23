@@ -191,29 +191,28 @@ $(document).on("keydown", (e) => {
 	 * r = random
 	 */
 	let shift = e.shiftKey
-	console.log(`Pressed ${e.key} with shift status ${shift}`)
-	// switch (e.key) {
-	// 	case "ArrowLeft":
-	// 		if (shift) buttonFirst()
-	// 		else buttonPrevious()
-	// 		break
-	// 	case "ArrowRight":
-	// 		if (shift) buttonLast()
-	// 		else buttonNext()
-	// 		break
-	// 	case "r":
-	// 		buttonRandom()
-	// 		break
-	// 	case "plus":
-	// 		buttonPlus()
-	// 		break
-	// 	case "minus":
-	// 		buttonMinus()
-	// 		break
-	// 	default:
-	// 		console.log(`Unhandled key: ${e.key}`);
-	// 		break;
-	// }
+	switch (e.key) {
+		case "ArrowLeft":
+			if (shift) buttonFirst()
+			else buttonPrevious()
+			break
+		case "ArrowRight":
+			if (shift) buttonLast()
+			else buttonNext()
+			break
+		case "r":
+		case "R":
+			buttonRandom()
+			break
+		case "=":
+		case "+":
+			buttonPlus()
+			break
+		case "-":
+		case "_":
+			buttonMinus()
+			break
+	}
 })
 
 // ================================ ON LOAD  ================================ //
