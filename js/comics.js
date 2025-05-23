@@ -101,7 +101,7 @@ function setZoom(zoom) {
 	$(".comicContainer").hide().show(0)
 }
 
-$(".comicButtonPlus").on("click", () => {
+function buttonPlus() {
 	let zoom = getZoom()
 	if (zoom >= 1) {
 		// Increase zoom by one
@@ -111,34 +111,43 @@ $(".comicButtonPlus").on("click", () => {
 	// Decrease the denominator of the zoom by one
 	// Usually the numerator is one, if not we will divide by zero.
 	setZoom(1 / ((1 / zoom) - 1))
-})
+}
+$(".comicButtonPlus").on("click", buttonPlus)
+$(document).on("keydown", function(e) {
+	if (e.key === "+" || e.key === "=") {
+		buttonPlus();
+	}
+});
 
-$(".comicButtonMinus").on("click", () => {
+function buttonMinus() {
 	// Opposite of the .comicButtonPlus (swaps [+] and [-])
-
 	let zoom = getZoom()
 	if (zoom >= 1) {
 		setZoom(zoom - 1)
 		return
 	}
 	setZoom(1 / ((1 / zoom) + 1))
-})
+}
+$(".comicButtonMinus").on("click", buttonMinus)
 
-$(".comicButtonFirst").on("click", () => {
+function buttonFirst() {
 	getFirstComicID().then((id) => {
 		id = id.toString(0x06)
 		window.location.href = `/comics?comic=${id}`
 	})
-})
+}
+$(".comicButtonFirst").on("click", buttonFirst)
 
-$(".comicButtonLast").on("click", () => {
+
+function buttonLast() {
 	getLastComicID().then((id) => {
 		id = id.toString(0x06)
 		window.location.href = `/comics?comic=${id}`
 	})
-})
+}
+$(".comicButtonLast").on("click", buttonLast)
 
-$(".comicButtonNext").on("click", () => {
+function buttonNext() {
 	getCurrentComicID().then((id) => {
 		id = parseInt(id, 0x06)
 		id += 1
@@ -148,9 +157,10 @@ $(".comicButtonNext").on("click", () => {
 			window.location.href = `/comics?comic=${id}`
 		})
 	})
-})
+}
+$(".comicButtonNext").on("click", buttonNext)
 
-$(".comicButtonPrevious").on("click", () => {
+function buttonPrevious() {
 	getCurrentComicID().then((id) => {
 		id = parseInt(id, 0x06)
 		id -= 1
@@ -158,16 +168,18 @@ $(".comicButtonPrevious").on("click", () => {
 		id = id.toString(0x06)
 		window.location.href = `/comics?comic=${id}`
 	})
-})
+}
+$(".comicButtonPrevious").on("click", buttonPrevious)
 
-$(".comicButtonRandom").on("click", async () => {
+async function buttonRandom() {
 	let first = await getFirstComicID()
 	let last = await getLastComicID()
 	let id = Math.floor(
 		Math.random() * (last - first + 1)
 	) + first
 	window.location.href = `/comics?comic=${id.toString(0x06)}`
-})
+}
+$(".comicButtonRandom").on("click", buttonRandom)
 
 
 // ================================ ON LOAD  ================================ //
@@ -182,6 +194,7 @@ $( document ).ready(() => {
 		}
 	}
 
+	// Set Comic ID
 	if (currentID) {
 		let comicId = parseInt(currentID, 0x06).toString(0x06)
 		SetComicID(comicId)
