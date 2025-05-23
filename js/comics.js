@@ -196,9 +196,19 @@ $(document).on("keydown", (e) => {
 			if (shift) buttonFirst()
 			else buttonPrevious()
 			break
+		case "f":
+		case "F":
+			buttonFirst()
+			break
 		case "ArrowRight":
 			if (shift) buttonLast()
 			else buttonNext()
+			break
+		case "l":
+		case "L":
+		case "c":
+		case "C":
+			buttonLast()
 			break
 		case "r":
 		case "R":
