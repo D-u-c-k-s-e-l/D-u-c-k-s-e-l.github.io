@@ -113,11 +113,6 @@ function buttonPlus() {
 	setZoom(1 / ((1 / zoom) - 1))
 }
 $(".comicButtonPlus").on("click", buttonPlus)
-$(document).on("keydown", function(e) {
-	if (e.key === "+" || e.key === "=") {
-		buttonPlus();
-	}
-});
 
 function buttonMinus() {
 	// Opposite of the .comicButtonPlus (swaps [+] and [-])
@@ -181,6 +176,44 @@ async function buttonRandom() {
 }
 $(".comicButtonRandom").on("click", buttonRandom)
 
+$(document).on("keydown", (e) => {
+	if (!e.key) {
+		return
+	}
+	// cspell: ignore keybinds
+	/** Keybinds
+	 * plus = enlarge
+	 * minus = shrink
+	 * left = previous
+	 * right = next
+	 * shift + left = first
+	 * shift + right = last
+	 * r = random
+	 */
+	let shift = e.shiftKey
+	switch (e.key) {
+		case "ArrowLeft":
+			if (shift) buttonFirst()
+			else buttonPrevious()
+			break
+		case "ArrowRight":
+			if (shift) buttonLast()
+			else buttonNext()
+			break
+		case "r":
+			buttonRandom()
+			break
+		case "plus":
+			buttonPlus()
+			break
+		case "minus":
+			buttonMinus()
+			break
+		default:
+			console.log(`Unhandled key: ${e.key}`);
+			break;
+	}
+})
 
 // ================================ ON LOAD  ================================ //
 
